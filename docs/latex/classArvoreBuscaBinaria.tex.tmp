@@ -1,0 +1,223 @@
+\hypertarget{classArvoreBuscaBinaria}{}\doxysection{Referência da Classe Arvore\+Busca\+Binaria}
+\label{classArvoreBuscaBinaria}\index{ArvoreBuscaBinaria@{ArvoreBuscaBinaria}}
+
+
+Diagrama de colaboração para Arvore\+Busca\+Binaria\+:
+% FIG 0
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a260a2875861372a74e11432df5762213}\label{classArvoreBuscaBinaria_a260a2875861372a74e11432df5762213}} 
+void {\bfseries ler\+Arquivos} (std\+::string arquivo1, std\+::string arquivo2)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a3cf5b3adc33be0e063c109c7a710c09f}\label{classArvoreBuscaBinaria_a3cf5b3adc33be0e063c109c7a710c09f}} 
+void {\bfseries inserir} (int valor)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a8a91b391471372001999b727e5ad95b0}\label{classArvoreBuscaBinaria_a8a91b391471372001999b727e5ad95b0}} 
+std\+::string {\bfseries pre\+\_\+ordem} ()
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a8f387a3fa0ac9f50dd1c101a025f960e}\label{classArvoreBuscaBinaria_a8f387a3fa0ac9f50dd1c101a025f960e}} 
+void {\bfseries remover} (int valor)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a29bac6f1c72b4edd309b6c0d11614a9a}\label{classArvoreBuscaBinaria_a29bac6f1c72b4edd309b6c0d11614a9a}} 
+bool {\bfseries buscar} (int valor)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a7d6effcc9803c0d097f5684afed5782b}\label{classArvoreBuscaBinaria_a7d6effcc9803c0d097f5684afed5782b}} 
+bool {\bfseries eh\+Cheia} ()
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a93be700637f72b7b024c81fd8daf3166}\label{classArvoreBuscaBinaria_a93be700637f72b7b024c81fd8daf3166}} 
+bool {\bfseries eh\+Completa} ()
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a69588acd3504f3fb24ea53e9557118b5}\label{classArvoreBuscaBinaria_a69588acd3504f3fb24ea53e9557118b5}} 
+void {\bfseries imprime\+Arvore} (int s)
+\item 
+int \mbox{\hyperlink{classArvoreBuscaBinaria_afddba7f161ed6c9f0bc178b4aafa5bb5}{enesimo\+Elemento}} (int n)
+\begin{DoxyCompactList}\small\item\em Retorna o n-\/ésimo elemento da árvore. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classArvoreBuscaBinaria_a31a6873829da260b7b9a75948bb62cc4}{posicao}} (int x)
+\begin{DoxyCompactList}\small\item\em Retorna a posição dos elementos na árvore. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classArvoreBuscaBinaria_a1f9257d61b923b3d91cec41d6c5d15d7}{mediana}} ()
+\begin{DoxyCompactList}\small\item\em Retorna a mediana da árvore. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classArvoreBuscaBinaria_ae78ba3a2fe576e6702ba8820ca2d4909}{media}} (int x)
+\begin{DoxyCompactList}\small\item\em Calcula a média dos elementos da subárvore a partir do x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membros Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a518eb2d9b1819a8330285c4ad0133da2}\label{classArvoreBuscaBinaria_a518eb2d9b1819a8330285c4ad0133da2}} 
+\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$ {\bfseries inserir\+Helper} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$no, int valor)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a98060128cd6b70988ce528b5ddc9b65a}\label{classArvoreBuscaBinaria_a98060128cd6b70988ce528b5ddc9b65a}} 
+std\+::string {\bfseries pre\+Ordem\+Helper} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$no)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a376a72f606fb78823c808598d6356deb}\label{classArvoreBuscaBinaria_a376a72f606fb78823c808598d6356deb}} 
+\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$ {\bfseries remover\+Helper} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$no, int valor)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_ae4945a1ab9cdce581608760641a991c9}\label{classArvoreBuscaBinaria_ae4945a1ab9cdce581608760641a991c9}} 
+\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$ {\bfseries min\+No} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$no)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a12022455c5c3419d5e455fe7b15d0e12}\label{classArvoreBuscaBinaria_a12022455c5c3419d5e455fe7b15d0e12}} 
+\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$ {\bfseries buscar\+Helper} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$no, int valor)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_af53911ed91e56b7640e7a1c74b194b79}\label{classArvoreBuscaBinaria_af53911ed91e56b7640e7a1c74b194b79}} 
+bool {\bfseries eh\+Cheia\+Helper} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$no)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a491b703f71ce19dc95600a1f7a696c68}\label{classArvoreBuscaBinaria_a491b703f71ce19dc95600a1f7a696c68}} 
+bool {\bfseries eh\+Completa\+Helper} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$raiz, int index, int numero\+Nos)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_ae460ec6e3ba1756bdb438dfd0e4b2250}\label{classArvoreBuscaBinaria_ae460ec6e3ba1756bdb438dfd0e4b2250}} 
+int {\bfseries contar\+Nos} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$no)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a3f63e16ced9759fb77265fa69bd7f47f}\label{classArvoreBuscaBinaria_a3f63e16ced9759fb77265fa69bd7f47f}} 
+void {\bfseries imprime\+Arvore1\+Helper} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$raiz, std\+::string prefixo)
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_afcd0cd5eefee5e2cb0f0eb9937c1179d}\label{classArvoreBuscaBinaria_afcd0cd5eefee5e2cb0f0eb9937c1179d}} 
+void {\bfseries imprime\+Arvore2\+Helper} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$raiz, int numero\+Nos)
+\item 
+void \mbox{\hyperlink{classArvoreBuscaBinaria_aea3bbfaa9366d17e9eb2b34254baf962}{ordem\+Nes}} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$raiz, int \&cont, int n, int \&enesimo)
+\begin{DoxyCompactList}\small\item\em Percorre a árvore em ordem e encontra o n-\/ésimo elemento. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classArvoreBuscaBinaria_ad237f9c98bcc27ed185449092ab89f44}{ordem\+Pos}} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$raiz, int \&cont, int x)
+\begin{DoxyCompactList}\small\item\em Verifica a existencia de um elemento existe na árvore. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classArvoreBuscaBinaria_a85e5671c2cc98560b9a620fcd8123706}{media}} (\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$raiz)
+\begin{DoxyCompactList}\small\item\em Calcula a média dos elementos presentes na subárvore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a27e4848f90340a6b3e25606e65919622}\label{classArvoreBuscaBinaria_a27e4848f90340a6b3e25606e65919622}} 
+\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$ {\bfseries raiz}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{classArvoreBuscaBinaria_afddba7f161ed6c9f0bc178b4aafa5bb5}\label{classArvoreBuscaBinaria_afddba7f161ed6c9f0bc178b4aafa5bb5}} 
+\index{ArvoreBuscaBinaria@{ArvoreBuscaBinaria}!enesimoElemento@{enesimoElemento}}
+\index{enesimoElemento@{enesimoElemento}!ArvoreBuscaBinaria@{ArvoreBuscaBinaria}}
+\doxysubsubsection{\texorpdfstring{enesimoElemento()}{enesimoElemento()}}
+{\footnotesize\ttfamily int Arvore\+Busca\+Binaria\+::enesimo\+Elemento (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Retorna o n-\/ésimo elemento da árvore. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em n} & O número escolhido pelo usuario. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+o resutado do n-\/ésimo número. Retorna -\/1 se o elemento não for encontrado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArvoreBuscaBinaria_ae78ba3a2fe576e6702ba8820ca2d4909}\label{classArvoreBuscaBinaria_ae78ba3a2fe576e6702ba8820ca2d4909}} 
+\index{ArvoreBuscaBinaria@{ArvoreBuscaBinaria}!media@{media}}
+\index{media@{media}!ArvoreBuscaBinaria@{ArvoreBuscaBinaria}}
+\doxysubsubsection{\texorpdfstring{media()}{media()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Arvore\+Busca\+Binaria\+::media (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Calcula a média dos elementos da subárvore a partir do x. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em x} & O valor presente no nó raiz da subárvore a ser considerada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A média dos elementos da subárvore ou 0.\+0 se o valor não for encontrado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a85e5671c2cc98560b9a620fcd8123706}\label{classArvoreBuscaBinaria_a85e5671c2cc98560b9a620fcd8123706}} 
+\index{ArvoreBuscaBinaria@{ArvoreBuscaBinaria}!media@{media}}
+\index{media@{media}!ArvoreBuscaBinaria@{ArvoreBuscaBinaria}}
+\doxysubsubsection{\texorpdfstring{media()}{media()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double Arvore\+Busca\+Binaria\+::media (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$}]{newraiz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calcula a média dos elementos presentes na subárvore. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em newraiz} & O nó raiz da subárvore. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A média dos elementos da subárvore. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a1f9257d61b923b3d91cec41d6c5d15d7}\label{classArvoreBuscaBinaria_a1f9257d61b923b3d91cec41d6c5d15d7}} 
+\index{ArvoreBuscaBinaria@{ArvoreBuscaBinaria}!mediana@{mediana}}
+\index{mediana@{mediana}!ArvoreBuscaBinaria@{ArvoreBuscaBinaria}}
+\doxysubsubsection{\texorpdfstring{mediana()}{mediana()}}
+{\footnotesize\ttfamily int Arvore\+Busca\+Binaria\+::mediana (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna a mediana da árvore. 
+
+\begin{DoxyReturn}{Retorna}
+A mediana da árvore. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArvoreBuscaBinaria_aea3bbfaa9366d17e9eb2b34254baf962}\label{classArvoreBuscaBinaria_aea3bbfaa9366d17e9eb2b34254baf962}} 
+\index{ArvoreBuscaBinaria@{ArvoreBuscaBinaria}!ordemNes@{ordemNes}}
+\index{ordemNes@{ordemNes}!ArvoreBuscaBinaria@{ArvoreBuscaBinaria}}
+\doxysubsubsection{\texorpdfstring{ordemNes()}{ordemNes()}}
+{\footnotesize\ttfamily void Arvore\+Busca\+Binaria\+::ordem\+Nes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$}]{raiz,  }\item[{int \&}]{cont,  }\item[{int}]{n,  }\item[{int \&}]{enesimo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Percorre a árvore em ordem e encontra o n-\/ésimo elemento. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em raiz} & O ponteiro para a raiz da árvore. \\
+\hline
+{\em cont} & O contador da posição atual em ordem. \\
+\hline
+{\em n} & O número do elemento. \\
+\hline
+{\em enesimo} & n-\/ésimo numero. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArvoreBuscaBinaria_ad237f9c98bcc27ed185449092ab89f44}\label{classArvoreBuscaBinaria_ad237f9c98bcc27ed185449092ab89f44}} 
+\index{ArvoreBuscaBinaria@{ArvoreBuscaBinaria}!ordemPos@{ordemPos}}
+\index{ordemPos@{ordemPos}!ArvoreBuscaBinaria@{ArvoreBuscaBinaria}}
+\doxysubsubsection{\texorpdfstring{ordemPos()}{ordemPos()}}
+{\footnotesize\ttfamily bool Arvore\+Busca\+Binaria\+::ordem\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNoABB}{No\+A\+BB}} $\ast$}]{raiz,  }\item[{int \&}]{cont,  }\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Verifica a existencia de um elemento existe na árvore. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em raiz} & O ponteiro para a raiz da árvore. \\
+\hline
+{\em cont} & O contador para rastrear a posição em ordem. \\
+\hline
+{\em x} & O elemento que vai ser verificado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true se o elemento existe na árvore, false senão. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArvoreBuscaBinaria_a31a6873829da260b7b9a75948bb62cc4}\label{classArvoreBuscaBinaria_a31a6873829da260b7b9a75948bb62cc4}} 
+\index{ArvoreBuscaBinaria@{ArvoreBuscaBinaria}!posicao@{posicao}}
+\index{posicao@{posicao}!ArvoreBuscaBinaria@{ArvoreBuscaBinaria}}
+\doxysubsubsection{\texorpdfstring{posicao()}{posicao()}}
+{\footnotesize\ttfamily int Arvore\+Busca\+Binaria\+::posicao (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Retorna a posição dos elementos na árvore. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em x} & O elemento pesquisado na árvore. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A posição do elemento na árvore ou -\/1 se não for encontrado. 
+\end{DoxyReturn}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/Arvore\+Busca\+Binaria.\+hpp\item 
+src/Arvore\+Busca\+Binaria.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EDB2-ABB: Código-Fonte de include/ArvoreBuscaBinaria.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EDB2-ABB
+   &#160;<span id="projectnumber">1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ArvoreBuscaBinaria.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ARVORE_BUSCA_BINARIA_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ARVORE_BUSCA_BINARIA_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;NoABB.hpp&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classArvoreBuscaBinaria.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classArvoreBuscaBinaria.html">ArvoreBuscaBinaria</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classNoABB.html">NoABB</a>* raiz;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classNoABB.html">NoABB</a>* inserirHelper(<a class="code" href="classNoABB.html">NoABB</a>* no, <span class="keywordtype">int</span> valor);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        std::string preOrdemHelper(<a class="code" href="classNoABB.html">NoABB</a>* no);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="classNoABB.html">NoABB</a>* removerHelper(<a class="code" href="classNoABB.html">NoABB</a>* no, <span class="keywordtype">int</span> valor);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="classNoABB.html">NoABB</a>* minNo(<a class="code" href="classNoABB.html">NoABB</a>* no);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classNoABB.html">NoABB</a>* buscarHelper(<a class="code" href="classNoABB.html">NoABB</a>* no, <span class="keywordtype">int</span> valor);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">bool</span> ehCheiaHelper(<a class="code" href="classNoABB.html">NoABB</a>* no);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">bool</span> ehCompletaHelper(<a class="code" href="classNoABB.html">NoABB</a>* raiz, <span class="keywordtype">int</span> index, <span class="keywordtype">int</span> numeroNos);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">int</span> contarNos(<a class="code" href="classNoABB.html">NoABB</a>* no);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">void</span> imprimeArvore1Helper(<a class="code" href="classNoABB.html">NoABB</a>* raiz, std::string prefixo);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> imprimeArvore2Helper(<a class="code" href="classNoABB.html">NoABB</a>* raiz, <span class="keywordtype">int</span> numeroNos);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classArvoreBuscaBinaria.html#aea3bbfaa9366d17e9eb2b34254baf962">ordemNes</a>(<a class="code" href="classNoABB.html">NoABB</a>* raiz, <span class="keywordtype">int</span> &amp;cont, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> &amp;enesimo);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classArvoreBuscaBinaria.html#ad237f9c98bcc27ed185449092ab89f44">ordemPos</a>(<a class="code" href="classNoABB.html">NoABB</a>* raiz, <span class="keywordtype">int</span> &amp;cont, <span class="keywordtype">int</span> x);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classArvoreBuscaBinaria.html#a85e5671c2cc98560b9a620fcd8123706">media</a> (<a class="code" href="classNoABB.html">NoABB</a>* raiz);       </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classArvoreBuscaBinaria.html">ArvoreBuscaBinaria</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> lerArquivos(std::string arquivo1, std::string arquivo2);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> inserir(<span class="keywordtype">int</span> valor);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::string  pre_ordem();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> remover(<span class="keywordtype">int</span> valor);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">bool</span> buscar(<span class="keywordtype">int</span> valor);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">bool</span> ehCheia();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">bool</span> ehCompleta();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> imprimeArvore(<span class="keywordtype">int</span> s);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classArvoreBuscaBinaria.html#afddba7f161ed6c9f0bc178b4aafa5bb5">enesimoElemento</a>(<span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classArvoreBuscaBinaria.html#a31a6873829da260b7b9a75948bb62cc4">posicao</a> (<span class="keywordtype">int</span> x);  </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classArvoreBuscaBinaria.html#a1f9257d61b923b3d91cec41d6c5d15d7">mediana</a> ();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classArvoreBuscaBinaria.html#a85e5671c2cc98560b9a620fcd8123706">media</a> (<span class="keywordtype">int</span> x);     </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassNoABB_html"><div class="ttname"><a href="classNoABB.html">NoABB</a></div><div class="ttdef"><b>Definition:</b> NoABB.hpp:4</div></div>
+<div class="ttc" id="aclassArvoreBuscaBinaria_html_aea3bbfaa9366d17e9eb2b34254baf962"><div class="ttname"><a href="classArvoreBuscaBinaria.html#aea3bbfaa9366d17e9eb2b34254baf962">ArvoreBuscaBinaria::ordemNes</a></div><div class="ttdeci">void ordemNes(NoABB *raiz, int &amp;cont, int n, int &amp;enesimo)</div><div class="ttdoc">Percorre a árvore em ordem e encontra o n-ésimo elemento.</div><div class="ttdef"><b>Definition:</b> ArvoreBuscaBinaria.cpp:261</div></div>
+<div class="ttc" id="aclassArvoreBuscaBinaria_html_a31a6873829da260b7b9a75948bb62cc4"><div class="ttname"><a href="classArvoreBuscaBinaria.html#a31a6873829da260b7b9a75948bb62cc4">ArvoreBuscaBinaria::posicao</a></div><div class="ttdeci">int posicao(int x)</div><div class="ttdoc">Retorna a posição dos elementos na árvore.</div><div class="ttdef"><b>Definition:</b> ArvoreBuscaBinaria.cpp:327</div></div>
+<div class="ttc" id="aclassArvoreBuscaBinaria_html_a85e5671c2cc98560b9a620fcd8123706"><div class="ttname"><a href="classArvoreBuscaBinaria.html#a85e5671c2cc98560b9a620fcd8123706">ArvoreBuscaBinaria::media</a></div><div class="ttdeci">double media(NoABB *raiz)</div><div class="ttdoc">Calcula a média dos elementos presentes na subárvore.</div><div class="ttdef"><b>Definition:</b> ArvoreBuscaBinaria.cpp:376</div></div>
+<div class="ttc" id="aclassArvoreBuscaBinaria_html_ad237f9c98bcc27ed185449092ab89f44"><div class="ttname"><a href="classArvoreBuscaBinaria.html#ad237f9c98bcc27ed185449092ab89f44">ArvoreBuscaBinaria::ordemPos</a></div><div class="ttdeci">bool ordemPos(NoABB *raiz, int &amp;cont, int x)</div><div class="ttdoc">Verifica a existencia de um elemento existe na árvore.</div><div class="ttdef"><b>Definition:</b> ArvoreBuscaBinaria.cpp:303</div></div>
+<div class="ttc" id="aclassArvoreBuscaBinaria_html_afddba7f161ed6c9f0bc178b4aafa5bb5"><div class="ttname"><a href="classArvoreBuscaBinaria.html#afddba7f161ed6c9f0bc178b4aafa5bb5">ArvoreBuscaBinaria::enesimoElemento</a></div><div class="ttdeci">int enesimoElemento(int n)</div><div class="ttdoc">Retorna o n-ésimo elemento da árvore.</div><div class="ttdef"><b>Definition:</b> ArvoreBuscaBinaria.cpp:285</div></div>
+<div class="ttc" id="aclassArvoreBuscaBinaria_html_a1f9257d61b923b3d91cec41d6c5d15d7"><div class="ttname"><a href="classArvoreBuscaBinaria.html#a1f9257d61b923b3d91cec41d6c5d15d7">ArvoreBuscaBinaria::mediana</a></div><div class="ttdeci">int mediana()</div><div class="ttdoc">Retorna a mediana da árvore.</div><div class="ttdef"><b>Definition:</b> ArvoreBuscaBinaria.cpp:343</div></div>
+<div class="ttc" id="aclassArvoreBuscaBinaria_html"><div class="ttname"><a href="classArvoreBuscaBinaria.html">ArvoreBuscaBinaria</a></div><div class="ttdef"><b>Definition:</b> ArvoreBuscaBinaria.hpp:12</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
