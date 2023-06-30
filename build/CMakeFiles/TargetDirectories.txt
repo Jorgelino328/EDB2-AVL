@@ -1,3 +1,0 @@
-/home/jorgelino/EDB2-AVL/build/CMakeFiles/EDB2-ABB.dir
-/home/jorgelino/EDB2-AVL/build/CMakeFiles/edit_cache.dir
-/home/jorgelino/EDB2-AVL/build/CMakeFiles/rebuild_cache.dir
