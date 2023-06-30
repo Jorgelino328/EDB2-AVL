@@ -1,4 +1,5 @@
 #include "ArvoreBuscaBinaria.hpp"
+
 //Construtor
 ArvoreBuscaBinaria::ArvoreBuscaBinaria() {
     raiz = nullptr;
@@ -423,4 +424,16 @@ double ArvoreBuscaBinaria::media (int x){
         return 0.0; 
     }
      return media(newraiz);
+}
+
+int ArvoreBuscaBinaria::getAltura(NoABB* node) {
+    if (node == nullptr)
+        return 0;
+    return node->altura;
+}
+
+void ArvoreBuscaBinaria::updateAltura(NoABB* node) {
+    int alturaEsquerda = getAltura(node->esquerda);
+    int alturaDireita = getAltura(node->direita);
+    node->altura = 1 + std::max(alturaEsquerda, alturaDireita);
 }

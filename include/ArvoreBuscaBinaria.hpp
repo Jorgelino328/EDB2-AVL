@@ -236,7 +236,6 @@ class ArvoreBuscaBinaria {
          */
         int mediana ();
 
-
         /**
          * @brief Calcula a média dos elementos da subárvore a partir do x.
          *
@@ -245,6 +244,9 @@ class ArvoreBuscaBinaria {
          */
         double media (int x);     
 
+        int getAltura(NoABB* node);
+        
+        void updateAltura(NoABB* node);
 };
 
 #endif
