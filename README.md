@@ -1,4 +1,7 @@
-# Projeto de EDB2 de Jorge e Gustavo
+# Arvore AVL 
+Autores: Jorge William Câmara Sales e Gustavo Sousa Bernardes
+# Descrição
+Transformação e construção de uma árvore AVL com as operações de busca, inserção e remoção.
 
 ## Compilação
     mkdir build

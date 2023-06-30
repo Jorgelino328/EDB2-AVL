@@ -1,16 +1,18 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
   )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/gustavobiz/aaa5 semestre/EDB2-AVL/src/ArvoreBuscaBinaria.cpp" "/home/gustavobiz/aaa5 semestre/EDB2-AVL/build/CMakeFiles/EDB2-ABB.dir/src/ArvoreBuscaBinaria.cpp.o"
+  "/home/gustavobiz/aaa5 semestre/EDB2-AVL/src/NoABB.cpp" "/home/gustavobiz/aaa5 semestre/EDB2-AVL/build/CMakeFiles/EDB2-ABB.dir/src/NoABB.cpp.o"
+  "/home/gustavobiz/aaa5 semestre/EDB2-AVL/src/main.cpp" "/home/gustavobiz/aaa5 semestre/EDB2-AVL/build/CMakeFiles/EDB2-ABB.dir/src/main.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/jorgelino/EDB2-AVL/EDB2-ABB/src/ArvoreBuscaBinaria.cpp" "CMakeFiles/EDB2-ABB.dir/src/ArvoreBuscaBinaria.cpp.o" "gcc" "CMakeFiles/EDB2-ABB.dir/src/ArvoreBuscaBinaria.cpp.o.d"
-  "/home/jorgelino/EDB2-AVL/EDB2-ABB/src/NoABB.cpp" "CMakeFiles/EDB2-ABB.dir/src/NoABB.cpp.o" "gcc" "CMakeFiles/EDB2-ABB.dir/src/NoABB.cpp.o.d"
-  "/home/jorgelino/EDB2-AVL/EDB2-ABB/src/main.cpp" "CMakeFiles/EDB2-ABB.dir/src/main.cpp.o" "gcc" "CMakeFiles/EDB2-ABB.dir/src/main.cpp.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../include"
   )
 
 # Targets to which this target links.
