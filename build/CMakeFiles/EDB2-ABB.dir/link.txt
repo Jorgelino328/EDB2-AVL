@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++14 -g  -rdynamic CMakeFiles/EDB2-ABB.dir/src/ArvoreBuscaBinaria.cpp.o CMakeFiles/EDB2-ABB.dir/src/NoABB.cpp.o CMakeFiles/EDB2-ABB.dir/src/main.cpp.o  -o EDB2-ABB 
