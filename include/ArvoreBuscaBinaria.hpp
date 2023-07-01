@@ -247,6 +247,10 @@ class ArvoreBuscaBinaria {
         int getAltura(NoABB* node);
         
         void updateAltura(NoABB* node);
+
+        NoABB* rodarEsquerda(NoABB* node);
+        
+        NoABB* rodarDireita(NoABB* node);
 };
 
 #endif

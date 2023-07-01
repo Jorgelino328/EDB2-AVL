@@ -11,7 +11,9 @@ NoABB* ArvoreBuscaBinaria::inserirHelper(NoABB* no, int valor) {
     // Verifica se o nó atual é nulo, indicando uma árvore vazia ou uma posição de inserção.
     if (no == nullptr){
         std::cout << valor << " adicionado" << std::endl;
-        return new NoABB(valor,1/*altura*/); // Cria um novo nó com o valor e o retorna como nova raiz.
+        NoABB* newNode = new NoABB(valor,1);
+        newNode->esquerda = newNode->direita = nullptr;
+        return newNode; // Cria um novo nó com o valor e o retorna como nova raiz.
     }
 
     // Verifica se o valor é menor que o valor do nó atual.
@@ -28,6 +30,30 @@ NoABB* ArvoreBuscaBinaria::inserirHelper(NoABB* no, int valor) {
     else 
         std::cout << valor << " já está na árvore, não pode ser inserido" << std::endl;
     
+    updateAltura(no);
+
+    int fatorBalanco = getAltura(no->esquerda) - getAltura(no->direita);
+
+    // Left-Left Case
+    if (fatorBalanco > 1 && valor < no->esquerda->dado)
+        return rodarDireita(no);
+
+    // Right-Right Case
+    if (fatorBalanco < -1 && valor < no->direita->dado)
+        return rodarEsquerda(no);
+
+    // Left-Right Case
+    if (fatorBalanco > 1 && valor < no->esquerda->dado) {
+        no->esquerda = rodarEsquerda(no->esquerda);
+        return rodarDireita(no);
+    }
+
+    // Right-Left Case
+    if (fatorBalanco < -1 && valor < no->direita->dado) {
+        no->direita = rodarDireita(no->direita);
+        return rodarEsquerda(no);
+    }
+
     // Retorna o nó atual como a nova raiz da árvore após a inserção.
     return no;
 }
@@ -436,4 +462,22 @@ void ArvoreBuscaBinaria::updateAltura(NoABB* node) {
     int alturaEsquerda = getAltura(node->esquerda);
     int alturaDireita = getAltura(node->direita);
     node->altura = 1 + std::max(alturaEsquerda, alturaDireita);
+}
+
+NoABB* ArvoreBuscaBinaria::rodarEsquerda(NoABB* node) {
+    NoABB* newRoot = node->direita;
+    node->direita = newRoot->esquerda;
+    newRoot->esquerda = node;
+    updateAltura(node);
+    updateAltura(newRoot);
+    return newRoot;
+}
+
+NoABB* ArvoreBuscaBinaria::rodarDireita(NoABB* node) {
+    NoABB* newRoot = node->esquerda;
+    node->esquerda = newRoot->direita;
+    newRoot->direita = node;
+    updateAltura(node);
+    updateAltura(newRoot);
+    return newRoot;
 }
