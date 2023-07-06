@@ -12,6 +12,7 @@
 class ArvoreBuscaBinaria {
     private:
         NoABB* raiz;//<! atributo que salva a raiz da ABB
+        int cont=0, exibir=0;
 
         /**
          * @brief Função auxiliar da função inserir(), recebe um nó da ABB e um valor inteiro
@@ -42,7 +43,7 @@ class ArvoreBuscaBinaria {
          * @param valor O valor do nó a ser removido
          * @return NoABB* O ponteiro para o nó da árvore final, usado na recursão.
          */
-        NoABB* removerHelper(NoABB* no, int valor);
+        NoABB* removerHelper(NoABB* no, int valor,int valorRemovido);
 
         /**
          * @brief Função que recebe um nó e usa recursão para encontrar o menor nó da ABB

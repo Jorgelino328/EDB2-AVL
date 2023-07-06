@@ -57,36 +57,38 @@ NoABB* ArvoreBuscaBinaria::inserirHelper(NoABB* no, int valor) {
     // Retorna o nó atual como a nova raiz da árvore após a inserção.
     return no;
 }
-
-NoABB* ArvoreBuscaBinaria::removerHelper(NoABB* no, int valor) {
+NoABB* ArvoreBuscaBinaria::removerHelper(NoABB* no, int valor,int valorRemovido) {
     if (no == nullptr) {
         std::cout << valor << " não está na árvore, não pode ser removido" << std::endl;
         return nullptr;
     }
 
     if (valor < no->dado) {
-        no->esquerda = removerHelper(no->esquerda, valor);
+        no->esquerda = removerHelper(no->esquerda, valor, valorRemovido);
     } else if (valor > no->dado) {
-        no->direita = removerHelper(no->direita, valor);
+        no->direita = removerHelper(no->direita, valor, valorRemovido);
     } else {
         if (no->esquerda == nullptr && no->direita == nullptr) {
+            
             delete no;
             no = nullptr;
-            std::cout << valor << " removido" << std::endl;
+            std::cout << valorRemovido << " removido" << std::endl;
         } else if (no->esquerda == nullptr) {
+            
             NoABB* temp = no;
             no = no->direita;
             delete temp;
-            std::cout << valor << " removido" << std::endl;
+            std::cout << valorRemovido << " removido" << std::endl;
         } else if (no->direita == nullptr) {
+            
             NoABB* temp = no;
             no = no->esquerda;
             delete temp;
-            std::cout << valor << " removido" << std::endl;
+            std::cout << valorRemovido << " removido" << std::endl;
         } else {
             NoABB* mindireita = minNo(no->direita);
             no->dado = mindireita->dado;
-            no->direita = removerHelper(no->direita, mindireita->dado);
+            no->direita = removerHelper(no->direita, mindireita->dado, valorRemovido);
         }
     }
 
@@ -100,7 +102,7 @@ NoABB* ArvoreBuscaBinaria::removerHelper(NoABB* no, int valor) {
             return rodarDireita(no);
 
         // Right-Right Case
-        if (fatorBalanco < -1 && getAltura(no->direita->esquerda) >= getAltura(no->direita->direita))
+        if (fatorBalanco < -1 && getAltura(no->direita->esquerda) <= getAltura(no->direita->direita))
             return rodarEsquerda(no);
 
         // Left-Right Case
@@ -110,7 +112,7 @@ NoABB* ArvoreBuscaBinaria::removerHelper(NoABB* no, int valor) {
         }
 
         // Right-Left Case
-        if (fatorBalanco < -1 && getAltura(no->direita->esquerda) < getAltura(no->direita->direita)) {
+        if (fatorBalanco < -1 && getAltura(no->direita->esquerda) > getAltura(no->direita->direita)) {
             no->direita = rodarDireita(no->direita);
             return rodarEsquerda(no);
         }
@@ -118,6 +120,7 @@ NoABB* ArvoreBuscaBinaria::removerHelper(NoABB* no, int valor) {
 
     return no;
 }
+
 
 // NoABB* ArvoreBuscaBinaria::removerHelper(NoABB* no, int valor) {
 
@@ -411,7 +414,7 @@ std::string ArvoreBuscaBinaria::pre_ordem() {
 }
 
 void ArvoreBuscaBinaria::remover(int valor) {
-    raiz = removerHelper(raiz, valor);
+    raiz = removerHelper(raiz, valor,valor);
 }
 
 bool ArvoreBuscaBinaria::buscar(int valor) {
