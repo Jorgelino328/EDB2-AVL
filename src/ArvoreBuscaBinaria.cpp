@@ -59,46 +59,30 @@ NoABB* ArvoreBuscaBinaria::inserirHelper(NoABB* no, int valor) {
 }
 
 NoABB* ArvoreBuscaBinaria::removerHelper(NoABB* no, int valor) {
-
-    // Verifica se o nó atual é nulo, indicando que o valor não está presente na árvore.
     if (no == nullptr) {
         std::cout << valor << " não está na árvore, não pode ser removido" << std::endl;
         return nullptr;
     }
 
-
-    // Verifica se o valor é menor que o valor do nó atual.
-    // Chama recursivamente a função para remover o valor na subárvore esquerda do nó atual.
     if (valor < no->dado) {
         no->esquerda = removerHelper(no->esquerda, valor);
-
-    // Verifica se o valor é maior que o valor do nó atual.
-    // Chama recursivamente a função para remover o valor na subárvore direita do nó atual.
     } else if (valor > no->dado) {
         no->direita = removerHelper(no->direita, valor);
-
     } else {
-        // Caso o nó a ser removido seja uma folha (sem filhos).
         if (no->esquerda == nullptr && no->direita == nullptr) {
             delete no;
             no = nullptr;
             std::cout << valor << " removido" << std::endl;
-
-        // Caso o nó a ser removido tenha apenas um filho na subárvore direita.
         } else if (no->esquerda == nullptr) {
             NoABB* temp = no;
             no = no->direita;
             delete temp;
             std::cout << valor << " removido" << std::endl;
-
-        // Caso o nó a ser removido tenha apenas um filho na subárvore esquerda.
         } else if (no->direita == nullptr) {
             NoABB* temp = no;
             no = no->esquerda;
             delete temp;
             std::cout << valor << " removido" << std::endl;
-        
-        // Caso o nó a ser removido tenha dois filhos.
         } else {
             NoABB* mindireita = minNo(no->direita);
             no->dado = mindireita->dado;
@@ -106,9 +90,86 @@ NoABB* ArvoreBuscaBinaria::removerHelper(NoABB* no, int valor) {
         }
     }
 
-    // Retorna o nó atual como a nova raiz da árvore após a remoção.
+    if (no != nullptr) {
+        no->altura = 1 + std::max(getAltura(no->esquerda), getAltura(no->direita));
+
+        int fatorBalanco = getAltura(no->esquerda) - getAltura(no->direita);
+
+        // Left-Left Case
+        if (fatorBalanco > 1 && getAltura(no->esquerda->esquerda) >= getAltura(no->esquerda->direita))
+            return rodarDireita(no);
+
+        // Right-Right Case
+        if (fatorBalanco < -1 && getAltura(no->direita->esquerda) >= getAltura(no->direita->direita))
+            return rodarEsquerda(no);
+
+        // Left-Right Case
+        if (fatorBalanco > 1 && getAltura(no->esquerda->esquerda) < getAltura(no->esquerda->direita)) {
+            no->esquerda = rodarEsquerda(no->esquerda);
+            return rodarDireita(no);
+        }
+
+        // Right-Left Case
+        if (fatorBalanco < -1 && getAltura(no->direita->esquerda) < getAltura(no->direita->direita)) {
+            no->direita = rodarDireita(no->direita);
+            return rodarEsquerda(no);
+        }
+    }
+
     return no;
 }
+
+// NoABB* ArvoreBuscaBinaria::removerHelper(NoABB* no, int valor) {
+
+//     // Verifica se o nó atual é nulo, indicando que o valor não está presente na árvore.
+//     if (no == nullptr) {
+//         std::cout << valor << " não está na árvore, não pode ser removido" << std::endl;
+//         return nullptr;
+//     }
+
+
+//     // Verifica se o valor é menor que o valor do nó atual.
+//     // Chama recursivamente a função para remover o valor na subárvore esquerda do nó atual.
+//     if (valor < no->dado) {
+//         no->esquerda = removerHelper(no->esquerda, valor);
+
+//     // Verifica se o valor é maior que o valor do nó atual.
+//     // Chama recursivamente a função para remover o valor na subárvore direita do nó atual.
+//     } else if (valor > no->dado) {
+//         no->direita = removerHelper(no->direita, valor);
+
+//     } else {
+//         // Caso o nó a ser removido seja uma folha (sem filhos).
+//         if (no->esquerda == nullptr && no->direita == nullptr) {
+//             delete no;
+//             no = nullptr;
+//             std::cout << valor << " removido" << std::endl;
+
+//         // Caso o nó a ser removido tenha apenas um filho na subárvore direita.
+//         } else if (no->esquerda == nullptr) {
+//             NoABB* temp = no;
+//             no = no->direita;
+//             delete temp;
+//             std::cout << valor << " removido" << std::endl;
+
+//         // Caso o nó a ser removido tenha apenas um filho na subárvore esquerda.
+//         } else if (no->direita == nullptr) {
+//             NoABB* temp = no;
+//             no = no->esquerda;
+//             delete temp;
+//             std::cout << valor << " removido" << std::endl;
+        
+//         // Caso o nó a ser removido tenha dois filhos.
+//         } else {
+//             NoABB* mindireita = minNo(no->direita);
+//             no->dado = mindireita->dado;
+//             no->direita = removerHelper(no->direita, mindireita->dado);
+//         }
+//     }
+
+//     // Retorna o nó atual como a nova raiz da árvore após a remoção.
+//     return no;
+// }
 
 std::string ArvoreBuscaBinaria::preOrdemHelper(NoABB* no) {
     std::string travessia;
