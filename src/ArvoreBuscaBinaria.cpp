@@ -69,18 +69,15 @@ NoABB* ArvoreBuscaBinaria::removerHelper(NoABB* no, int valor,int valorRemovido)
         no->direita = removerHelper(no->direita, valor, valorRemovido);
     } else {
         if (no->esquerda == nullptr && no->direita == nullptr) {
-            
             delete no;
             no = nullptr;
             std::cout << valorRemovido << " removido" << std::endl;
         } else if (no->esquerda == nullptr) {
-            
             NoABB* temp = no;
             no = no->direita;
             delete temp;
             std::cout << valorRemovido << " removido" << std::endl;
         } else if (no->direita == nullptr) {
-            
             NoABB* temp = no;
             no = no->esquerda;
             delete temp;

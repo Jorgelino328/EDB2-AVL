@@ -35,14 +35,12 @@ class ArvoreBuscaBinaria {
         std::string preOrdemHelper(NoABB* no);
 
         /**
-         * @brief Função auxiliar da função remover(), recebe um nó da ABB, e  usa recursão
-         * para substituir os valor dos nós filhos até que o nó a em questão esteja em uma
-         * folha e possa ser removido.
-         *
-         * @param no O ponteiro para o nó da árvore usado como raiz na função.
-         * @param valor O valor do nó a ser removido
-         * @return NoABB* O ponteiro para o nó da árvore final, usado na recursão.
-         */
+        * @brief Remove um nó com um valor específico da árvore.
+        * @param no O nó atual sendo considerado.
+        * @param valor O valor a ser removido.
+        * @param valorRemovido O valor original a ser removido (para fins de exibição).
+        * @return O nó atual após a remoção.
+        */
         NoABB* removerHelper(NoABB* no, int valor,int valorRemovido);
 
         /**
@@ -243,14 +241,37 @@ class ArvoreBuscaBinaria {
          * @param x O valor presente no nó raiz da subárvore a ser considerada.
          * @return A média dos elementos da subárvore ou 0.0 se o valor não for encontrado.
          */
-        double media (int x);     
-
+        double media (int x); 
+            
+        /**
+        * @brief Obtém a altura de um nó na árvore.
+        *
+        * @param node O nó para o qual a altura será calculada.
+        * @return A altura do nó.
+        */
         int getAltura(NoABB* node);
-        
+
+        /**
+        * @brief Atualiza a altura de um nó na árvore.
+        *
+        * @param node O nó para o qual a altura será atualizada.
+        */
         void updateAltura(NoABB* node);
 
+        /**
+        * @brief Realiza uma rotacao para a esquerda em um nó na árvore.
+        *
+        * @param node O nó a ser rotacionado.
+        * @return O novo nó raiz após a rotacao.
+        */
         NoABB* rodarEsquerda(NoABB* node);
-        
+
+        /**
+        * @brief Realiza uma rotacao para a direita em um nó na árvore.
+        *
+        * @param node O nó a ser rotacionado.
+        * @return O novo nó raiz após a rotacao.
+        */      
         NoABB* rodarDireita(NoABB* node);
 };
 
