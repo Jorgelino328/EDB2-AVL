@@ -25,33 +25,29 @@ NoABB* ArvoreBuscaBinaria::inserirHelper(NoABB* no, int valor) {
         updateAltura(no->direita);
     }else {
         std::cout << valor << " já está na árvore, não pode ser inserido" << std::endl;
-        return no; // If the value already exists, return the current node.
+        return no; 
     }
     
     updateAltura(no);
 
     int fatorBalanco = getAltura(no->esquerda) - getAltura(no->direita);
 
-    // Left Case
+    // Rotação Esquerda
     if (fatorBalanco > 1 && valor < no->esquerda->dado){
-        std::cout << "Rotação Esquerda ("<<no->dado<<")" << std::endl;
         return rodarDireita(no);
     }
-    // Right Case
+    // Rotação Direita
     if (fatorBalanco < -1 && valor > no->direita->dado){
-        std::cout << "Rotação Direita ("<<no->dado<<")" << std::endl;
         return rodarEsquerda(no);
     }
-    // Left-Right Case
+    // Rotação Dupla Direita
     if (fatorBalanco > 1 && valor > no->esquerda->dado) {
-        std::cout << "Rotação Dupla Direita ("<<no->dado<<")" << std::endl;
         no->esquerda = rodarEsquerda(no->esquerda);
         return rodarDireita(no);
     }
 
-    // Right-Left Case
+    // Rotação Dupla Esquerda
     if (fatorBalanco < -1 && valor < no->direita->dado) {
-        std::cout << "Rotação Dupla Esquerda("<<no<<")" << std::endl;
         no->direita = rodarDireita(no->direita);
         return rodarEsquerda(no);
     }
@@ -96,27 +92,28 @@ NoABB* ArvoreBuscaBinaria::removerHelper(NoABB* no, int valor,int valorRemovido)
 
         int fatorBalanco = getAltura(no->esquerda) - getAltura(no->direita);
 
-        // Left-Left Case
+        // Rotação Esquerda
         if (fatorBalanco > 1 && getAltura(no->esquerda->esquerda) >= getAltura(no->esquerda->direita))
             return rodarDireita(no);
 
-        // Right-Right Case
+        // Rotação Direita
         if (fatorBalanco < -1 && getAltura(no->direita->esquerda) <= getAltura(no->direita->direita))
             return rodarEsquerda(no);
 
-        // Left-Right Case
+        // Rotação Dupla Direita
         if (fatorBalanco > 1 && getAltura(no->esquerda->esquerda) < getAltura(no->esquerda->direita)) {
             no->esquerda = rodarEsquerda(no->esquerda);
             return rodarDireita(no);
         }
 
-        // Right-Left Case
+        // Rotação Dupla Esquerda
         if (fatorBalanco < -1 && getAltura(no->direita->esquerda) > getAltura(no->direita->direita)) {
             no->direita = rodarDireita(no->direita);
             return rodarEsquerda(no);
         }
+        
+        updateAltura(no);
     }
-
     return no;
 }
 
