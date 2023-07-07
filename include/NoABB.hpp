@@ -7,6 +7,12 @@ public:
     int altura;
     NoABB* esquerda;
     NoABB* direita;
+    /**
+    * @brief Construtor da classe NoABB.
+    *
+    * @param valor O valor a ser armazenado no nó.
+    * @param altura A altura do nó.
+    */
     NoABB(int valor, int altura);
 };
 
